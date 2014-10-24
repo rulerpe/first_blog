@@ -13,4 +13,10 @@ class CommentsController < ApplicationController
 	  	params.require(:comment).permit(:author_name, :body)
 	end
 
+		def tag_list
+  		self.tags.collect do |tag|
+    		tag.name
+  		end.join(", ")
+	end
+
 end
